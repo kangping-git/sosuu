@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>素数判定機</title>
+</head>
+<body>
+    自然数<input id="str1">は<a id="str2"></a>
+    <script>
+        function keisan(){
+            var a = sizensuu = document.getElementById("str1").value
+            var b = 2
+            var sosuu = true
+            for (b = 2;b <= Math.floor(Math.sqrt(a));++b){
+                if (a % b == 0){
+                    sosuu = false
+                    break
+                }
+            }
+            if (sosuu == false || a < 2 || a % 1 != 0){
+                document.getElementById("str2").innerText = "素数ではありません"
+            }else{
+                document.getElementById("str2").innerText = "素数です"
+            }
+        }
+        setInterval(keisan,1)
+    </script>
+</body>
+</html>
